@@ -36,18 +36,17 @@ import { HttpClient } from '@angular/common/http';
 export class ProfileComponent implements OnInit {
   userName!: string;
   hubService: HubService;
-
+  profile:any;
   submitUsername(){
     // this.hubService.getProfileData(this.userName)
     // this.hubService.getProfileData(this.userName).subscribe((profile: any) =>{
       this.http.get<any>("https://api.github.com/users/"+this.userName).subscribe((profile: any)=>{
-      console.log(profile);
       this.profile=profile;
+      
 
     });
   }
   
-  profile:any;
   constructor(hubService: HubService, private http: HttpClient) {
     this.hubService = hubService
     // this.hubService.getProfileData(this.userName).subscribe((profile: any) =>{
