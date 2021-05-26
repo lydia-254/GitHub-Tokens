@@ -25,8 +25,7 @@
 
 // }
 import { Component, OnInit } from '@angular/core';
-import { HubService } from '../services/hub.service';
-import { HubService } from './hub.service';
+import { HubService } from '../Hub.Service';
 
 @Component({
   selector: 'app-profile',
@@ -43,8 +42,8 @@ export class ProfileComponent implements OnInit {
 
   profile:any;
   constructor(hubService.HubService) {
-    this.profileService = profileService
-    this.profileService.getProfileData().subscribe((profile: any) =>{
+    this.hubService = HubService
+    this.hubService.getProfileData().subscribe((profile: any) =>{
       console.log(profile);
       this.profile=profile;
 

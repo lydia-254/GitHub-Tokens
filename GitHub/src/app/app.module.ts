@@ -28,9 +28,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
-import {HttpClientModule} from '@angular/common/http'
-// import { profile } from 'console';
-import { HubService } from './hub.service';
+import {HttpClientModule} from '@angular/common/http';
+import { HubService} from './Hub.Service';
 
 @NgModule({
   declarations: [
@@ -40,10 +39,11 @@ import { HubService } from './hub.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
     
   ],
-  providers: [ProfileService],
+  providers: [HubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
