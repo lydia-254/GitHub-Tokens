@@ -3,10 +3,14 @@
   <h2><b>Profile picture</b></h2>
 </div>
 <img src="" alt="" style="width: 100px; height: 100px" />
-<form>
+<form (ngSubmit)='userSubmit()'>
+  <input type="text" name="userName" class="form-control" placeholder="Enter your Username" [(ngModel)]=userName>
+  <button class="btn btn-outline-success btn-sm" type="submit">Fetch Github Data</button>
+</form>
+<!-- <form>
   <input type="text" name="username" class="form-control" placeholder="Enter your Username" />
   <button class="btn btn-outline-success btn-sm">Fetch Github Data</button>
-</form>
+</form> -->
 <!-- <div class="panel-body">
   <div class="row">
     <div class="col-sm-4">

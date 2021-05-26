@@ -30,7 +30,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http'
 // import { profile } from 'console';
-import { ProfileService } from './profile.service';
+import { HubService } from './hub.service';
 
 @NgModule({
   declarations: [
