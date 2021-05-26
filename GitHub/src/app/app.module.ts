@@ -29,7 +29,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
-import { HubService} from './Hub.Service';
+// import { ServiceHub} from './Service.Hub';
+import { HubService } from './services/hub.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { HubService} from './Hub.Service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     
     
   ],

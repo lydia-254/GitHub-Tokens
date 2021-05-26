@@ -25,7 +25,8 @@
 
 // }
 import { Component, OnInit } from '@angular/core';
-import { HubService } from '../Hub.Service';
+import { HubService } from '../services/hub.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -33,21 +34,27 @@ import { HubService } from '../Hub.Service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  username!: string;
-  hubService!: HubService;
+  userName!: string;
+  hubService: HubService;
 
   submitUsername(){
-    this.hubService.getUserData(this.username)
-  }
-
-  profile:any;
-  constructor(hubService.HubService) {
-    this.hubService = HubService
-    this.hubService.getProfileData().subscribe((profile: any) =>{
+    // this.hubService.getProfileData(this.userName)
+    // this.hubService.getProfileData(this.userName).subscribe((profile: any) =>{
+      this.http.get<any>("https://api.github.com/users/"+this.userName).subscribe((profile: any)=>{
       console.log(profile);
       this.profile=profile;
 
     });
+  }
+  
+  profile:any;
+  constructor(hubService: HubService, private http: HttpClient) {
+    this.hubService = hubService
+    // this.hubService.getProfileData(this.userName).subscribe((profile: any) =>{
+    //   console.log(profile);
+    //   this.profile=profile;
+
+    // });
    }
 
   ngOnInit(){
