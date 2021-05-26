@@ -1,32 +1,34 @@
-<h1>GitHub-Tokens</h1>
-<div id="pract">
-  <h2><b>Profile picture</b></h2>
-</div>
-<form (ngSubmit)='submitUsername()'>
-  <input type="text" name="userName" class="form-control" placeholder="Enter your Username" [(ngModel)]="userName">
-  <button class="btn btn-outline-success btn-sm" type="submit">Fetch Github Data</button>
-</form>
-<img src="{{profile.avatar_url}}" alt="" style="width: 100px; height: 100px" />
-<div class="panel-body">
-  <div class="row">
-    <div class="col-sm-4">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <b>Name:</b> {{ profile.login }}
-        </li>
-        <li class="list-group-item" *ngIf="profile.bio">
-          <b>Bio:</b>{{ profile.bio }}
-        </li>
-        <li class="list-group-item">
-          <b>School:</b>{{ profile.company }}
-        </li>
-      </ul>
+<div class="container">
+  <h1>GitHub-Tokens</h1>
+  <div id="pract">
+    <h2><b>Profile picture</b></h2>
+  </div>
+  <form (ngSubmit)='submitUsername()'>
+    <input type="text" name="userName" class="form-control" placeholder="Enter your Username" [(ngModel)]="userName">
+    <button class="btn btn-outline-success btn-sm" type="submit">Fetch Github Data</button>
+  </form>
+  <img src="{{profile.avatar_url}}" alt="" style="width: 100px; height: 100px" />
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-4">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <b>Name:</b> {{ profile.login }}
+          </li>
+          <li class="list-group-item" *ngIf="profile.bio">
+            <b>Bio:</b>{{ profile.bio }}
+          </li>
+          <li class="list-group-item">
+            <b>School:</b>{{ profile.company }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<div *ngFor="let repo of repoData">
-  {{ repo.name}}
-  {{ repo.clone_url}}
-  <br>
-  
+  <div *ngFor="let repo of repoData">
+    {{ repo.name}}
+    {{ repo.clone_url}}
+    <br>
+
+  </div>
 </div>
