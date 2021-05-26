@@ -37,13 +37,17 @@ export class ProfileComponent implements OnInit {
   userName!: string;
   hubService: HubService;
   profile:any;
+  repoData: any=[]
   submitUsername(){
     // this.hubService.getProfileData(this.userName)
     // this.hubService.getProfileData(this.userName).subscribe((profile: any) =>{
       this.http.get<any>("https://api.github.com/users/"+this.userName).subscribe((profile: any)=>{
       this.profile=profile;
-      
-
+    });
+    this.http.get<any>("https://api.github.com/users/"+this.userName+"/repos").subscribe((repos: any)=>{
+      this.repoData=repos;
+      console.log(this.repoData)
+      console.log(repos)
     });
   }
   
