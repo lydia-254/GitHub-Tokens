@@ -32,11 +32,13 @@ import {HttpClientModule} from '@angular/common/http';
 // import { ServiceHub} from './Service.Hub';
 import { HubService } from './services/hub.service';
 import { FormsModule } from '@angular/forms';
+import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
+    RepositoryComponent,
   ],
   imports: [
     BrowserModule,
