@@ -33,12 +33,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { HubService } from './services/hub.service';
 import { FormsModule } from '@angular/forms';
 import { RepositoryComponent } from './repository/repository.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     RepositoryComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

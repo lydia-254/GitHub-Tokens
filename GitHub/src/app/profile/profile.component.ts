@@ -1,29 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { profileService} from './Profile.Service';
-// @Component({
-//   selector: 'app-profile',
-//   templateUrl: './profile.component.html',
-//   styleUrls: ['./profile.component.css']
-// })
-// export class ProfileComponent implements OnInit {
-//   username!: string;
-//   profileService!: ProfileService;
-
-
-//   profile:any;
-//   constructor(profileService:ProfileService) {
-//     this.profileService = profileService
-//     this.profileService.getProfileData().subscribe(profile =>{
-//       console.log(profile);
-//       this.profile=profile;
-
-//     });
-//    }
-
-//   ngOnInit() {
-//   }
-
-// }
 import { Component, OnInit } from '@angular/core';
 import { HubService } from '../services/hub.service';
 import { HttpClient } from '@angular/common/http';
@@ -48,7 +22,7 @@ export class ProfileComponent implements OnInit {
       this.repoData=repos;
       console.log(this.repoData)
       console.log(repos)
-    });
+    }); 
   }
   
   constructor(hubService: HubService, private http: HttpClient) {
