@@ -33,3 +33,11 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span').textContent).toContain('GitHub app is running!');
   });
 });
+function beforeEach(arg0: () => Promise<void>) {
+  throw new Error('Function not implemented.');
+}
+
+function expect(textContent: any) {
+  throw new Error('Function not implemented.');
+}
+
