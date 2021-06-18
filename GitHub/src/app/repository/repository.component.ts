@@ -16,11 +16,8 @@ export class RepositoryComponent implements OnInit {
   repository:any;
   repoData: any=[]
   submitRepoLink(){
-
-    this.http.get<any>(""+this.repoLink).subscribe((repository: any)=>{
-      this.repository=this.repository;
-    });
-    this.http.get<any>(""+this.repoLink+"/repos").subscribe((repos: any)=>{
+    
+    this.http.get<any>("https://api.github.com/repos/"+this.repoLink+"/repos").subscribe((repos: any)=>{
       this.repoData=repos;
       console.log(this.repoData)
       console.log(repos)
