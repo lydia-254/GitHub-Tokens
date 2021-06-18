@@ -21,6 +21,9 @@
           <li class="list-group-item">
             <b>School:</b>{{ profile.company }}
           </li>
+          <li class="list-group-item">
+            <b>Date:</b> {{ profile.created_at| datecount }}
+          </li>
         </ul>
       </div>
     </div>

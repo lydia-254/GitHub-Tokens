@@ -10,6 +10,8 @@ import { HubService } from './services/hub.service';
 import { FormsModule } from '@angular/forms';
 import { RepositoryComponent } from './repository/repository.component';
 import { NavComponent } from './nav/nav.component';
+import { DatecountPipe } from './datecount.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { NavComponent } from './nav/nav.component';
     ProfileComponent,
     RepositoryComponent,
     NavComponent,
+    DatecountPipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
