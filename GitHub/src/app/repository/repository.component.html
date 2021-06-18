@@ -1,7 +1,29 @@
-<div *ngFor="let repo of repoData">
-    {{ repo.name}}
-    <br>
-    {{ repo.clone_url}}
-    <br>
-
+<div class="container">
+    <div>
+      <form (ngSubmit)='searchrepo()'>
+        <div class=" d-flex justify-content-center reposearch">
+          <input type="text" id="reposearch" class="form-control" placeholder="Search Repository..." [(ngModel)]='reposearch' name='reposearch'>
+          <button type='submit' class="ml-2 mr-2 btn btn-md">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mt-2" *ngFor='let repo of repos'>
+        <div class='bg-white repo'>
+          <h3 *ngIf='repo.forks !== maxvalue() || repo.forks === 0'>{{ repo.name }}</h3>
+          <div *ngIf='repo.forks === maxvalue() && repo.forks > 0'>
+            <h3 appHighlight>{{ repo.name }}</h3>
+          </div>
+  
+          <hr>
+          <a href="{{ repo.html_url }}"><i class="fa fa-github" aria-hidden="true"></i> To Repository</a>
+          <div class="desc">
+            <p>{{ repo.description }} </p>
+          </div>
+          <div class=" d-flex justify-content-between ">
+            <p>Created: <span>{{ repo.created_at | date}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
